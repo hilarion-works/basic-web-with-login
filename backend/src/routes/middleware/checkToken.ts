@@ -18,7 +18,6 @@ export const checkToken = async (req: Request, res: Response, next: NextFunction
                 // if (!user) return response.invalidInput('No User Found from this token id', res, flag.jwt_token_notmatch);
                 // req.user = user.dataValues
             } catch (error) {
-                console.log(error.message)
                 return response.unauthorized('Unauthorized access. Please contact our technical support.', res, 402);
             }
             next();

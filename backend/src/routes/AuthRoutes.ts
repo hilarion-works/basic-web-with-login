@@ -23,13 +23,11 @@ async function login(req: IReq, res: IRes) {
     const reqBody = req.body as BodyData
     const email = reqBody.email
     const password = reqBody.password
-    
     if (lodash.isEmpty(email) || lodash.isEmpty(password)) {
       return response.error("email or password cannot be empty", res, 301)
     }
-    const result = await AuthService.login(email, password);
-    console.log("result: ", result);
     
+    const result = await AuthService.login(email, password);
     if (result.flag === 200) {
       const dataResponse = {
         token: result.token

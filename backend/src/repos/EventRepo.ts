@@ -9,18 +9,7 @@ import { Event } from '@src/models/index'
  */
 async function getAll(): Promise<any> {
   const data = await Event.findAll({raw: true})
-  console.log("data all event: ", data);
-  
   return data;
-  // await Event.findAll({raw: true})
-  //   .then((data) => {
-  //     console.log("data: ", data);
-  //     return data as unknown as Event
-  //   })
-  //   .catch((err) => {
-  //     console.log("err: ", err);
-  //     return err
-  //   })
 }
 
 

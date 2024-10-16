@@ -12,7 +12,6 @@ export const generateToken = (user: {id: number, role_id: number}) => {
 
 export const verifyToken = (token: string) => {
   const content = JWT.verify(token, 'shhhhh', function(err, decoded) {
-    console.log(decoded) // bar
   });
   return content
 }

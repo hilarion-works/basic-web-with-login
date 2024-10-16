@@ -17,7 +17,6 @@ export default function IndexPage() {
 
 
   const changeLoginSection = ( paramLogin: boolean ) => {
-    console.log("changeLoginSection: ", paramLogin);
     setIsLoginSection(paramLogin)
   }
 
@@ -51,47 +50,17 @@ export default function IndexPage() {
         dataSend
       )
         .then((data) => {
-          console.log("data: ", data);
           let token = data.data.result.token
           localStorage.setItem("token", token)
           router.push('/home')
         })
         .catch((err) => {
-          console.log("err: ", err);
           alert(err.response.data.message)
         })
     } catch (error) {
-      console.log("ga masuk: ", error);
-      
       alert(error)
     }
   }
-
-  const getEventData =  async () => {
-    let urlEvent = ikigaiUrl + "/event/all"
-    let data = {}
-    let jwtToken = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwicm9sZV9pZCI6MSwiaWF0IjoxNzI4NjMxNzg1LCJleHAiOjE3MzEyMjM3ODV9.j6zfwqlDtiCnOM_WoKS1m4ZkmR8RADFU2nbhyiUJMeQ"
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': jwtToken
-    }
-    axios.post(
-      urlEvent,
-      data, 
-      {
-        headers: headers
-      })
-      .then((data) => {
-        console.log("data: ", data);
-      })
-      .catch((err) => {
-        console.log("err: ", err);
-      })
-  }
-
-  useEffect(() => {
-    // getEventData()
-  })
   
   const toogleButtonStyle = `
     /* Toggle A */

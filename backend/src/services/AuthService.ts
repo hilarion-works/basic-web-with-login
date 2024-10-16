@@ -83,8 +83,6 @@ async function register(email: string, password: string): Promise<any> {
   }
   try {
     const user = await UserRepo.getUserByEmail(email)
-    console.log("user: ", user);
-    
     if (!user) {
       const newPassword = await generatePassword(email, password)
       const data = {

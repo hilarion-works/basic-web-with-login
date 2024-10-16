@@ -68,11 +68,10 @@ export default function Home() {
           headers: headers
         })
         .then((data) => {
-          console.log("data: ", data);
           setEventsLit(data.data.result)
         })
         .catch((err) => {
-          console.log("err: ", err);
+          // console.log("err: ", err);
         })
     } else {
       logoutAccount()

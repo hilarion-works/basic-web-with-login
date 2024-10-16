@@ -17,7 +17,6 @@ export default function LoginPage() {
 
 
   const changeLoginSection = ( paramLogin: boolean ) => {
-    console.log("changeLoginSection: ", paramLogin);
     setIsLoginSection(paramLogin)
   }
 
@@ -51,18 +50,14 @@ export default function LoginPage() {
         dataSend
       )
         .then((data) => {
-          console.log("data: ", data);
           let token = data.data.result.token
           localStorage.setItem("token", token)
           router.push('/home')
         })
         .catch((err) => {
-          console.log("err: ", err);
           alert(err.response.data.message)
         })
     } catch (error) {
-      console.log("ga masuk: ", error);
-      
       alert(error)
     }
   }
@@ -82,10 +77,10 @@ export default function LoginPage() {
         headers: headers
       })
       .then((data) => {
-        console.log("data: ", data);
+        // console.log("data: ", data);
       })
       .catch((err) => {
-        console.log("err: ", err);
+        // console.log("err: ", err);
       })
   }
 
