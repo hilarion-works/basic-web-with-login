@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    image: ikigai-web-demo
+    build:
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+    volumes:
+        - .:/src/app
+        - /src/app/node_modules
+        - /src/app/.next
+    ports:
+      - "3000:3000"
