@@ -1,11 +1,4 @@
-# Ikigai IO test
-
-## Instructions
-
-### Repository Setup
-
-- Fork this repository to your own GitHub account.
-- Clone the forked repository to your local machine.
+# Authentication login
 
 ### Implementation
 
@@ -24,8 +17,8 @@
 
 ## Approach
 
-- Services are built in python/nodejs/go and reactjs
-- Database is official mongodb/posgresql/mysql docker container
+- Services are built in nodejs and reactjs all in typescript
+- Database is official posgresql docker container
 - Service images are built as needed
 - docker-compose is used to orchestrate containers
 
@@ -36,12 +29,8 @@
 
 ## Notes
 
-- Compromises were necessary due to the limited timeframe for completion items such as service polling for healthchecks with basic frontend/backend for login
+- basic frontend/backend for login and view for events
 
 ## AWS
 
 - A high level AWS arhitecture diagram
-
-## Bouns (Infrastructure as code)
-
-- Creating Load Balancer and EC2 with Auto Scaling Group using Terraform
